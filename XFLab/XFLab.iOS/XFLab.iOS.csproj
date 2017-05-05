@@ -134,9 +134,9 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\XFLab\XFLab.csproj">
-      <Project>{7f3166c6-994a-4fe5-a5fc-ad6016dd0b4e}</Project>
-      <Name>XFLab</Name>
+    <ProjectReference Include="..\XFLab\XFLabPCL.csproj">
+      <Project>{FDE9BC73-9F4B-4565-A684-A5AB77EE9095}</Project>
+      <Name>XFLabPCL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
