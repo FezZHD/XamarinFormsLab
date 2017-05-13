@@ -1,11 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<TabbedPage  xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:XFLab"
+             xmlns:views="clr-namespace:XFLab.Views;assembly=XFLab"
              x:Class="XFLab.MainPage">
-
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
-
-</ContentPage>
+    <TabbedPage.Children>
+        <NavigationPage>
+            <x:Arguments>
+                <views:PeopleList></views:PeopleList>
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage>
+            <x:Arguments>
+                <views:JobList></views:JobList>
+            </x:Arguments>
+        </NavigationPage>
+    </TabbedPage.Children>
+</TabbedPage>

@@ -13,7 +13,7 @@ namespace XFLab
         {
             InitializeComponent();
 
-            MainPage = new XFLab.MainPage();
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()
