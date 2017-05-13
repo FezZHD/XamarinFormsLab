@@ -4,12 +4,12 @@
              xmlns:views="clr-namespace:XFLab.Views;assembly=XFLab"
              x:Class="XFLab.MainPage">
     <TabbedPage.Children>
-        <NavigationPage>
+        <NavigationPage Title="People">
             <x:Arguments>
                 <views:PeopleList></views:PeopleList>
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage>
+        <NavigationPage Title="Jobs">
             <x:Arguments>
                 <views:JobList></views:JobList>
             </x:Arguments>

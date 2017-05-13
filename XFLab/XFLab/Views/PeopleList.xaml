@@ -1,10 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XFLab.Views.PeopleList">
+             x:Class="XFLab.Views.PeopleList"
+             Title="Select Man">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Label Text="Hi" HorizontalOptions="Center" VerticalOptions="Center"></Label>
-        </StackLayout>
+        <ListView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <Grid ColumnSpacing="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                            </Grid>
+                            <Image Aspect="AspectFill" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Image>
+                            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Column="1">
+                                <Label VerticalOptions="EndAndExpand" HorizontalOptions="StartAndExpand"></Label>
+                                <Label VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand"></Label>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </ContentPage.Content>
 </ContentPage>
