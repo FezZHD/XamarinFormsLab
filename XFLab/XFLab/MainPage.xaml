@@ -4,7 +4,7 @@
              xmlns:views="clr-namespace:XFLab.Views;assembly=XFLab"
              x:Class="XFLab.MainPage">
     <TabbedPage.Children>
-        <NavigationPage Title="People">
+        <NavigationPage Title="People" >
             <x:Arguments>
                 <views:PeopleList></views:PeopleList>
             </x:Arguments>

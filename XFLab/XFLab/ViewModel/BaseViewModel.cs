@@ -9,7 +9,7 @@ using XFLab.Annotations;
 
 namespace XFLab.ViewModel
 {
-    internal abstract class BaseViewModel: INotifyPropertyChanged
+    public class BaseViewModel: INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
