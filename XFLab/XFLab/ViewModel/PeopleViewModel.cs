@@ -17,9 +17,21 @@ namespace XFLab.ViewModel
 
         public ObservableCollection<PeopleListType> PeopleLists { get; set; }
 
+        private string name;
+
+        public string Name
+        {
+            get { return name; }
+            set
+            {
+                name = value;
+                OnPropertyChanged();
+            }
+        }
 
         public PeopleViewModel()
         {
+            Name = "kek";
             PeopleLists = new ObservableCollection<PeopleListType>();
             var list = JsonWorker.GetPeoples();
             AddToCollection(list);

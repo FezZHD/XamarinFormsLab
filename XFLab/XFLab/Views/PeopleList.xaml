@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XFLab.Views.PeopleList"
              xmlns:viewModel="clr-namespace:XFLab.ViewModel;assembly=XFLab"
-             Title="Select Man">
+             Title="{Binding Name}">
     <ContentPage.BindingContext>
         <viewModel:PeopleViewModel></viewModel:PeopleViewModel>
     </ContentPage.BindingContext>
