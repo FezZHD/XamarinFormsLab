@@ -6,8 +6,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add"></ToolbarItem>
     </ContentPage.ToolbarItems>
-    <ContentPage.Content>
-        <ListView ItemsSource="{Binding JobsList}"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+    <ListView ItemsSource="{Binding JobsList}"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -16,5 +15,4 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-    </ContentPage.Content>
 </ContentPage>

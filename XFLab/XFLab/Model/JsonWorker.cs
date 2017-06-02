@@ -44,6 +44,13 @@ namespace XFLab.Model
             return Deserialize<List<Job>>(content);
         }
 
+
+        internal static List<ImageListJson> GetImages()
+        {
+            var content = GetContentString("XFLab.Content.Pictures.json");
+            return Deserialize<List<ImageListJson>>(content);
+        }
+
         private static T Deserialize<T>(string content) where T : class
         {
             return JsonConvert.DeserializeObject<T>(content);

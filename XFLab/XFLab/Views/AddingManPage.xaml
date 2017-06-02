@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XFLab.Views.AddingManPage"
+             Title="Man">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="{Binding ButtonText}" Command="{Binding EditCommand}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image IsEnabled="{Binding IsEditable}" Source="{Binding Picture}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Aspect="AspectFit" Grid.Column="0" Grid.Row="0"></Image>
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Column="1" Grid.Row="0">
+                <Entry IsEnabled="{Binding IsEditable}" VerticalOptions="Start" Text="{Binding Name, Mode=TwoWay}" HorizontalOptions="FillAndExpand"></Entry>
+                <Button IsEnabled="{Binding IsEditable}" VerticalOptions="End" Text="{Binding Profession}" HorizontalOptions="Center"></Button>
+            </StackLayout>
+            <Entry IsEnabled="{Binding IsEditable}" Text="{Binding Description, Mode=TwoWay}" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1"></Entry>
+        </Grid>
+    </ScrollView>
+</ContentPage>

@@ -1,22 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XFLab.Views.PeopleList"
-             xmlns:viewModel="clr-namespace:XFLab.ViewModel;assembly=XFLab"
-             Title="{Binding Name}">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Command="{Binding AddCommand}"></ToolbarItem>
-    </ContentPage.ToolbarItems>
-    <ListView ItemsSource="{Binding PeopleLists}" SelectedItem="{Binding Item, Mode=OneWayToSource}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+             x:Class="XFLab.Views.SelectImageView">
+    <ListView ItemsSource="{Binding ImageList}" SelectedItem="{Binding Item, Mode=OneWayToSource}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                         <Image Source="{Binding Image}" Aspect="AspectFit" VerticalOptions="FillAndExpand"></Image>
                         <BoxView Color="Black" VerticalOptions="FillAndExpand" WidthRequest="1"></BoxView>
-                        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
                             <Label Text="{Binding Name}" VerticalOptions="EndAndExpand" HorizontalOptions="StartAndExpand"></Label>
-                            <Label Text="{Binding Profession}" VerticalOptions="EndAndExpand" HorizontalOptions="StartAndExpand"></Label>
                         </StackLayout>
                     </StackLayout>
                 </ViewCell>

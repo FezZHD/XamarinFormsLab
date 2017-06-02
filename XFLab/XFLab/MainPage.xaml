@@ -2,17 +2,8 @@
 <TabbedPage  xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views="clr-namespace:XFLab.Views;assembly=XFLab"
-             x:Class="XFLab.MainPage">
-    <TabbedPage.Children>
-        <NavigationPage Title="People" >
-            <x:Arguments>
-                <views:PeopleList></views:PeopleList>
-            </x:Arguments>
-        </NavigationPage>
-        <NavigationPage Title="Jobs">
-            <x:Arguments>
-                <views:JobList></views:JobList>
-            </x:Arguments>
-        </NavigationPage>
-    </TabbedPage.Children>
+             x:Class="XFLab.MainPage"
+             Title="Lab">
+    <views:PeopleList></views:PeopleList>
+    <views:JobList></views:JobList>
 </TabbedPage>
