@@ -4,14 +4,11 @@
              x:Class="XFLab.Views.PeopleList"
              xmlns:viewModel="clr-namespace:XFLab.ViewModel;assembly=XFLab"
              Title="{Binding Name}">
-    <ContentPage.BindingContext>
-        <viewModel:PeopleViewModel></viewModel:PeopleViewModel>
-    </ContentPage.BindingContext>
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add"></ToolbarItem>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding PeopleLists}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <ListView ItemsSource="{Binding PeopleLists}"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

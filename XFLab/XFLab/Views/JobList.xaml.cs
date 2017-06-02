@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XFLab.ViewModel;
 
 namespace XFLab.Views
 {
@@ -14,6 +15,7 @@ namespace XFLab.Views
     {
         public JobList()
         {
+            BindingContext = new JobViewModel(Navigation);
             InitializeComponent();
         }
     }

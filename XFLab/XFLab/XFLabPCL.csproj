@@ -38,12 +38,15 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\JobsSingletone.cs" />
     <Compile Include="Model\JsonWorker.cs" />
+    <Compile Include="Model\Types\Job.cs" />
     <Compile Include="Model\Types\JsonPeopleType.cs" />
     <Compile Include="Model\Types\People.cs" />
     <Compile Include="Model\Types\PeopleListType.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\JobViewModel.cs" />
     <Compile Include="ViewModel\PeopleViewModel.cs" />
     <Compile Include="Views\JobList.xaml.cs">
       <DependentUpon>JobList.xaml</DependentUpon>
@@ -82,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Content\People.json" />
+    <EmbeddedResource Include="Content\Jobs.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

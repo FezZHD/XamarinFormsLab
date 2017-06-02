@@ -19,18 +19,30 @@ namespace XFLab.Model
         }
 
 
-        internal static List<JsonPeopleType> GetPeoples()
+        private static string GetContentString(string jsonName)
         {
             var assembly = GetAssembly();
-            var content = assembly.GetManifestResourceStream("XFLab.Content.People.json");
+            var content = assembly.GetManifestResourceStream(jsonName);
             string contentText;
             using (var reader = new StreamReader(content))
             {
                 contentText = reader.ReadToEnd();
             }
+            return contentText;
+        }
+
+        internal static List<JsonPeopleType> GetPeoples()
+        {
+            var contentText = GetContentString("XFLab.Content.People.json");
             return Deserialize<List<JsonPeopleType>>(contentText);
         }
 
+
+        internal static List<Job> GetJobs()
+        {
+            var content = GetContentString("XFLab.Content.Jobs.json");
+            return Deserialize<List<Job>>(content);
+        }
 
         private static T Deserialize<T>(string content) where T : class
         {

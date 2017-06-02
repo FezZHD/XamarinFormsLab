@@ -29,8 +29,10 @@ namespace XFLab.ViewModel
             }
         }
 
-        public PeopleViewModel()
+
+        public PeopleViewModel(INavigation navigation)
         {
+            this.navigation = navigation;
             Name = "kek";
             PeopleLists = new ObservableCollection<PeopleListType>();
             var list = JsonWorker.GetPeoples();
