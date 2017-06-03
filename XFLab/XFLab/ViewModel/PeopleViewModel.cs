@@ -49,7 +49,6 @@ namespace XFLab.ViewModel
                     {
                         PeopleLists.Add(type);
                         MessagingCenter.Unsubscribe<AddManViewModel, PeopleListType>(this, "update");
-                        Item = null;
                     });
                     var page = new AddingManPage(new PeopleListType());
                     await navigation.PushAsync(page);
@@ -61,7 +60,6 @@ namespace XFLab.ViewModel
                     {
                         PeopleLists[index] = type;
                         MessagingCenter.Unsubscribe<AddManViewModel, PeopleListType>(this, "update");
-                        Item = null;
                     });
                     var page = new AddingManPage(people);
                     await navigation.PushAsync(page);
