@@ -77,12 +77,15 @@ namespace XFLab.ViewModel
             });
             UpdateProfession = new Command(async () =>
             {
-                MessagingCenter.Subscribe<ChangeProfessionViewModel, string>(this, "job", (model, source) =>
+                if (IsEditable)
                 {
-                    Profession = source;
-                    MessagingCenter.Unsubscribe<AddingImageViewModel, ImageSource>(this, "job");
-                });
-                await navigation.PushAsync(new UpdateProfessionView());
+                    MessagingCenter.Subscribe<ChangeProfessionViewModel, string>(this, "job", (model, source) =>
+                    {
+                        Profession = source;
+                        MessagingCenter.Unsubscribe<AddingImageViewModel, ImageSource>(this, "job");
+                    });
+                    await navigation.PushAsync(new UpdateProfessionView());
+                }
             });
         }
 

@@ -14,9 +14,9 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Image Source="{Binding Picture}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Aspect="Fill" Grid.Column="0" Grid.Row="0">
+            <Image Source="{Binding Picture}" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" Aspect="AspectFit" Grid.Column="0" Grid.Row="0">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding ChangeImageCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
                 </Image.GestureRecognizers>
