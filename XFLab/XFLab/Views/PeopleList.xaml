@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XFLab.Views.PeopleList"
              xmlns:viewModel="clr-namespace:XFLab.ViewModel;assembly=XFLab"
-             Title="{Binding Name}">
+             Title="People">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Command="{Binding AddCommand}"></ToolbarItem>
     </ContentPage.ToolbarItems>
