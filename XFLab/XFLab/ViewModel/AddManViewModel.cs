@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 using XFLab.Model.Types;
+using XFLab.Views;
 
 namespace XFLab.ViewModel
 {
@@ -28,9 +29,16 @@ namespace XFLab.ViewModel
         public AddManViewModel(INavigation navigation, PeopleListType people)
         {
             this.navigation = navigation;
+            if (people.Image == null)
+            {
+                Picture = ImageSource.FromFile("gachi.jpg");
+            }
+            else
+            {
+                Picture = people.Image;
+            }
             ButtonText = "Edit";
             IsEditable = false;
-            Picture = people.Image;
             Profession = people.Profession;
             Name = people.Name;
             Description = people.Description;
@@ -54,6 +62,27 @@ namespace XFLab.ViewModel
                     MessagingCenter.Send(this, "update", newPeople);
                     IsEditable = false;
                 }
+            });
+            ChangeImageCommand = new Command(async () =>
+            {
+                if (IsEditable)
+                {
+                    MessagingCenter.Subscribe<AddingImageViewModel, ImageSource>(this, "image", (model, source) =>
+                    {
+                        Picture = source;
+                        MessagingCenter.Unsubscribe<AddingImageViewModel, ImageSource>(this, "image");
+                    });
+                    await navigation.PushAsync(new SelectImageView());
+                }
+            });
+            UpdateProfession = new Command(async () =>
+            {
+                MessagingCenter.Subscribe<ChangeProfessionViewModel, string>(this, "job", (model, source) =>
+                {
+                    Profession = source;
+                    MessagingCenter.Unsubscribe<AddingImageViewModel, ImageSource>(this, "job");
+                });
+                await navigation.PushAsync(new UpdateProfessionView());
             });
         }
 
@@ -124,5 +153,17 @@ namespace XFLab.ViewModel
 
 
         public ICommand EditCommand { get; set; }
+
+
+        private ICommand imageCommand;
+
+        public ICommand ChangeImageCommand
+        {
+            get { return imageCommand; }
+            set { imageCommand = value; }
+        }
+
+
+        public ICommand UpdateProfession { get; set; }
     }
 }

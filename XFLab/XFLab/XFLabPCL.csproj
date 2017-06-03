@@ -50,8 +50,12 @@
     <Compile Include="ViewModel\AddingImageViewModel.cs" />
     <Compile Include="ViewModel\AddManViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\ChangeProfessionViewModel.cs" />
     <Compile Include="ViewModel\JobViewModel.cs" />
     <Compile Include="ViewModel\PeopleViewModel.cs" />
+    <Compile Include="Views\UpdateProfessionView.xaml.cs">
+      <DependentUpon>UpdateProfessionView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AddingManPage.xaml.cs">
       <DependentUpon>AddingManPage.xaml</DependentUpon>
     </Compile>
@@ -96,7 +100,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Content\People.json" />
     <EmbeddedResource Include="Content\Jobs.json" />
-    <None Include="Content\Pictures.json" />
+    <EmbeddedResource Include="Content\Pictures.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -119,6 +123,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\SelectImageView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\UpdateProfessionView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

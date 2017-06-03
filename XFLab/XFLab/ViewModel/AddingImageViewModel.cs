@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 using XFLab.Model;
 using XFLab.Model.Types;
@@ -20,6 +21,15 @@ namespace XFLab.ViewModel
             ImageList = new ObservableCollection<ImageList>();
             var list = JsonWorker.GetImages();
             AddToCollection(list);
+            SelectImage = new Command(async (o) =>
+            {
+                var image = o as ImageList;
+                if (image != null)
+                {
+                    MessagingCenter.Send(this, "image", image.Image);
+                    await navigation.PopAsync(true);
+                }
+            });
         }
 
 
@@ -36,6 +46,7 @@ namespace XFLab.ViewModel
                 }
                 item = value;
                 OnPropertyChanged();
+                SelectImage.Execute(item);
             }
         }
 
@@ -50,5 +61,8 @@ namespace XFLab.ViewModel
                 });
             }
         }
+
+
+        public ICommand SelectImage { get; set; }
     }
 }

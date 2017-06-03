@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XFLab.ViewModel.UpdateProfessionView">
+    <ListView ItemsSource="{Binding JobsList}" SelectedItem="{Binding Item}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Label Text="{Binding Profession}" HorizontalTextAlignment="Start" VerticalOptions="CenterAndExpand"></Label>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

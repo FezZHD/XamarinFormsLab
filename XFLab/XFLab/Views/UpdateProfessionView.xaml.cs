@@ -6,16 +6,15 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using XFLab.ViewModel;
 
-namespace XFLab.Views
+namespace XFLab.ViewModel
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SelectImageView : ContentPage
+    public partial class UpdateProfessionView : ContentPage
     {
-        public SelectImageView()
+        public UpdateProfessionView()
         {
-            BindingContext = new AddingImageViewModel(Navigation);
+            BindingContext = new ChangeProfessionViewModel(Navigation);
             InitializeComponent();
         }
     }
