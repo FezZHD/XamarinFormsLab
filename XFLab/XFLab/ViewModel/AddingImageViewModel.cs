@@ -40,13 +40,13 @@ namespace XFLab.ViewModel
             get { return item; }
             set
             {
-                if (value == null)
-                {
-                    return;
-                }
                 item = value;
+                if (item != null)
+                {
+                    SelectImage.Execute(item);
+                }
                 OnPropertyChanged();
-                SelectImage.Execute(item);
+               
             }
         }
 

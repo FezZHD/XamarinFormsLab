@@ -19,29 +19,16 @@ namespace XFLab.ViewModel
 
         public ObservableCollection<PeopleListType> PeopleLists { get; set; }
 
-        private string name;
-
-        public string Name
-        {
-            get { return name; }
-            set
-            {
-                name = value;
-                OnPropertyChanged();
-            }
-        }
 
 
         public PeopleViewModel(INavigation navigation)
         {
             this.navigation = navigation;
-            Name = "kek";
             PeopleLists = new ObservableCollection<PeopleListType>();
             var list = JsonWorker.GetPeoples();
             AddToCollection(list);
             AddCommand = new Command(async (o) =>
             { 
-                
                 var people = o as PeopleListType;
                 if (o == null)
                 {
@@ -64,7 +51,6 @@ namespace XFLab.ViewModel
                     var page = new AddingManPage(people);
                     await navigation.PushAsync(page);
                 }
-                Item = null;
             });
         }
 
@@ -75,13 +61,12 @@ namespace XFLab.ViewModel
             get { return item; }
             set
             {
-                if (value == null)
-                {
-                    return;
-                }
                 item = value;
+                if (item != null)
+                {
+                  AddCommand.Execute(item);  
+                }
                 OnPropertyChanged();
-                AddCommand.Execute(item);
             }
         }
 

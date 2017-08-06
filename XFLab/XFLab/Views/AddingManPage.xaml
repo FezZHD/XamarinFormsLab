@@ -7,25 +7,23 @@
         <ToolbarItem Text="{Binding ButtonText}" Command="{Binding EditCommand}"></ToolbarItem>
     </ContentPage.ToolbarItems>
     <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="2*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="2*"></RowDefinition>
-            </Grid.RowDefinitions>
-            <Image Source="{Binding Picture}" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" Aspect="AspectFit" Grid.Column="0" Grid.Row="0">
-                <Image.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding ChangeImageCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
-                </Image.GestureRecognizers>
-            </Image>
-            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Column="1" Grid.Row="0">
-                <Entry IsEnabled="{Binding IsEditable}" VerticalOptions="Start" Text="{Binding Name, Mode=TwoWay}" HorizontalOptions="FillAndExpand"></Entry>
-                <Button IsEnabled="{Binding IsEditable}" Command="{Binding UpdateProfession}" VerticalOptions="End" Text="{Binding Profession}" HorizontalOptions="Center"></Button>
-            </StackLayout>
-            <Entry IsEnabled="{Binding IsEditable}" Text="{Binding Description, Mode=TwoWay}" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1"></Entry>
-        </Grid>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Grid HorizontalOptions="Start" VerticalOptions="Start">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Source="{Binding Picture}" VerticalOptions="Start" HeightRequest="100" Aspect="AspectFit">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ChangeImageCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+                <StackLayout Grid.Column="1" VerticalOptions="Start" HorizontalOptions="StartAndExpand">
+                    <Entry  IsEnabled="{Binding IsEditable}" VerticalOptions="Start" Text="{Binding Name, Mode=TwoWay}" HorizontalOptions="FillAndExpand"></Entry>
+                    <Button IsEnabled="{Binding IsEditable}" Command="{Binding UpdateProfession}" VerticalOptions="End" Text="{Binding Profession}" HorizontalOptions="Center"></Button>
+                </StackLayout>
+            </Grid>
+            <Entry IsEnabled="{Binding IsEditable}" Text="{Binding Description, Mode=TwoWay}" VerticalOptions="Start" HorizontalOptions="FillAndExpand"></Entry>
+        </StackLayout>
     </ScrollView>
 </ContentPage>
