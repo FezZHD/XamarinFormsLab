@@ -7,7 +7,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Command="{Binding AddCommand}"></ToolbarItem>
     </ContentPage.ToolbarItems>
-    <ListView ItemsSource="{Binding PeopleLists}" SelectedItem="{Binding Item, Mode=OneWayToSource}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+    <ListView ItemsSource="{Binding PeopleLists}" ItemTapped="ListViewOnItemTapped" SelectedItem="{Binding Item, Mode=OneWayToSource}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>

@@ -51,7 +51,6 @@ namespace XFLab.ViewModel
                     var page = new AddingManPage(people);
                     await navigation.PushAsync(page);
                 }
-                Item = null;
             });
         }
 

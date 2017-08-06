@@ -6,7 +6,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Command="{Binding AddCommand}"></ToolbarItem>
     </ContentPage.ToolbarItems>
-    <ListView ItemsSource="{Binding JobsList}" SelectedItem="{Binding Item}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+    <ListView ItemsSource="{Binding JobsList}" ItemTapped="ListViewOnItemTapped" SelectedItem="{Binding Item}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

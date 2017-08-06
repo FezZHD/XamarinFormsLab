@@ -8,7 +8,7 @@
     </ContentPage.ToolbarItems>
     <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
         <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Grid HorizontalOptions="Start" VerticalOptions="Start">
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="Start">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="2*"></ColumnDefinition>
@@ -18,7 +18,7 @@
                         <TapGestureRecognizer Command="{Binding ChangeImageCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
                     </Image.GestureRecognizers>
                 </Image>
-                <StackLayout Grid.Column="1" VerticalOptions="Start" HorizontalOptions="StartAndExpand">
+                <StackLayout Grid.Column="1" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
                     <Entry  IsEnabled="{Binding IsEditable}" VerticalOptions="Start" Text="{Binding Name, Mode=TwoWay}" HorizontalOptions="FillAndExpand"></Entry>
                     <Button IsEnabled="{Binding IsEditable}" Command="{Binding UpdateProfession}" VerticalOptions="End" Text="{Binding Profession}" HorizontalOptions="Center"></Button>
                 </StackLayout>
