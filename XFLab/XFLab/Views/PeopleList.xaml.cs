@@ -18,5 +18,17 @@ namespace XFLab.Views
             BindingContext = new PeopleViewModel(Navigation);
             InitializeComponent();
         }
+
+     
+        
+
+        private void ListViewOnItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var list = sender as ListView;
+            if (list != null)
+            {
+                list.SelectedItem = null;
+            }
+        }
     }
 }
