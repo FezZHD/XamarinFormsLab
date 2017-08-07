@@ -52,9 +52,10 @@ namespace XFLab.ViewModel
                         JobsList[index] = newJob;
                         MessagingCenter.Unsubscribe<PopUpViewModel, string>(this, "jobUpdate");
                     });
-                    Item = null;
+                    
                     await navigation.PushPopupAsync(new ProfessionPopUp(job));
                 }
+                Item = null;
             });
         }
 
@@ -66,13 +67,13 @@ namespace XFLab.ViewModel
             get { return item; }
             set
             {
-                if (value == null)
-                {
-                    return;
-                }
                 item = value;
+                if (item != null)
+                {
+                    AddCommand.Execute(item);
+                }
+                
                 OnPropertyChanged();
-                AddCommand.Execute(item);
             }
         }
 
